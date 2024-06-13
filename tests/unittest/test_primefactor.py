@@ -23,6 +23,9 @@ class PrimeFactorTestCase(unittest.TestCase):
     def test_primefactor_of_6(self):
         self.assertEqual([2, 3], self.prime_factor.of(6))
 
+    def test_primefactor_of_9(self):
+        self.assertEqual([3, 3], self.prime_factor.of(9))
+
 
 if __name__ == "__main__":
     unittest.main()
