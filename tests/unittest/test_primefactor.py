@@ -4,27 +4,30 @@ from src.primefactor.primefactor import PrimeFactor
 
 
 class PrimeFactorTestCase(unittest.TestCase):
+
+    def setUp(self):
+        self.prime_factor = PrimeFactor()
+
     def test_primefactor_of_1(self):
-        pf = PrimeFactor()
+        self.assertEqual([], self.prime_factor.of(1))
 
-        with self.assertRaises(ValueError):
-            pf.of(1)
+    def test_primefactor_of_2(self):
+        self.assertEqual([2], self.prime_factor.of(2))
 
-    def test_primefactor_of_n(self):
-        pf = PrimeFactor()
+    def test_primefactor_of_3(self):
+        self.assertEqual([3], self.prime_factor.of(3))
 
-        expected_pairs = (
-            (2, [2]),
-            (3, [3]),
-            (4, [2, 2]),
-            (5, [5]),
-            (6, [2, 3]),
-            (7, [7]),
-            (8, [2, 2, 2]),
-        )
+    def test_primefactor_of_4(self):
+        self.assertEqual([2, 2], self.prime_factor.of(4))
 
-        for n, primes in expected_pairs:
-            self.assertEqual(primes, pf.of(n))
+    def test_primefactor_of_6(self):
+        self.assertEqual([2, 3], self.prime_factor.of(6))
+
+    def test_primefactor_of_9(self):
+        self.assertEqual([3, 3], self.prime_factor.of(9))
+
+    def test_primefactor_of_12(self):
+        self.assertEqual([2, 2, 3], self.prime_factor.of(12))
 
 
 if __name__ == "__main__":
