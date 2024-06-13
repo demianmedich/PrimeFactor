@@ -7,4 +7,6 @@ class PrimeFactor:
         factors = []
         if number == 2:
             factors = [2]
+        elif number == 3:
+            factors = [3]
         return factors
