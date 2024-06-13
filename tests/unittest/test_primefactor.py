@@ -6,9 +6,7 @@ from src.primefactor.primefactor import PrimeFactor
 class PrimeFactorTestCase(unittest.TestCase):
     def test_primefactor_of_1(self):
         pf = PrimeFactor()
-
-        with self.assertRaises(ValueError):
-            pf.of(1)
+        self.assertEqual([], pf.of(1))
 
     def test_primefactor_of_n(self):
         pf = PrimeFactor()
