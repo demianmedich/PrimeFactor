@@ -1,0 +1,11 @@
+[project]
+name = "primefactor"
+version = "0.0.1"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "pre-commit",
+    "coverage",
+]
